@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="index.css">
     <title>Platzi Conf</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar">
   
     <!-- Header -->
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="assets/images/logo-platzi.webp" alt="Platzi">
@@ -23,22 +23,22 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">La conferencia</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#main">La conferencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Los Oradores</a>
+              <a class="nav-link" href="#speakers">Los Oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Lugar y fecha</a>
+              <a class="nav-link" href="#place-time">Lugar y fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Conviertete Orador</a>
+              <a class="nav-link" href="#become-speaker">Conviertete Orador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-platzi" href="#">Compra tickets</a>
+              <a class="nav-link text-platzi" href="#" data-target="#modalBuy" data-toggle="modal">Compra tickets</a>
             </li>
           </ul>
         </div>
@@ -72,7 +72,7 @@
                     y a los oradores de primer nivel que tenemos para ti.
                   </p>
                   <a href="#" class="btn btn-outline-light">Quiero ser orador</a>
-                  <button type="button" class="btn btn-platzi">Comprar tickets</button>
+                  <button type="button" class="btn btn-platzi" data-target="#modalBuy" data-toggle="modal">Comprar tickets</button>
                 </div>
               </div>
             </div>
@@ -244,6 +244,42 @@
       </div>
     </footer>
   <!-- /Footer -->
+
+    <!-- ModalBuy -->
+    <div class="modal fade" id="modalBuy" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Comprar entradas</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="form-row">
+                <div class="form-group col">
+                  <div class="input-group mb">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-warning" role="alert">
+              Recibiras un mensaje de confirmación si resultas ganador!
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-platzi">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Modal -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
